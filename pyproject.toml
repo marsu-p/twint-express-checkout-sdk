@@ -1,0 +1,27 @@
+[project]
+name = "twint-express-checkout-sdk"
+version = "0.1.0"
+description = "Python client for the TWINT Merchant API, including Express Checkout (FastCheckout)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "cryptography>=42",
+    "requests>=2.31",
+    "zeep>=4.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/twint_sdk"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
